@@ -1,24 +1,29 @@
-import { Component } from 'react'
-import { View, Text } from '@tarojs/components'
-import './index.less'
+import Taro from "@tarojs/taro";
+import { Component } from "react";
+import { View, Text, Button } from "@tarojs/components";
+import "./index.less";
 
 export default class Index extends Component {
+  componentWillMount() {}
 
-  componentWillMount () { }
+  componentDidMount() {}
 
-  componentDidMount () { }
+  componentWillUnmount() {}
 
-  componentWillUnmount () { }
+  componentDidShow() {}
 
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  render () {
+  componentDidHide() {}
+  toList = () => {
+    Taro.navigateTo({
+      url: "/pages/list/index",
+    });
+  };
+  render() {
     return (
-      <View className='index'>
+      <View className="index">
         <Text>Hello world!</Text>
+        <Button className="btn" onClick={this.toList}>点击按钮去列表页</Button>
       </View>
-    )
+    );
   }
 }
